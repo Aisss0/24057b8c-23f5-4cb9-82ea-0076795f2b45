@@ -113,13 +113,13 @@ Expected response format:
   {
     "type": "Website",
     "name": "Source2",
-    "url": "https://example1.com/embed/${s.tmdb_id}",
+    "url": "https://example2.com/embed/${s.tmdb_id}",
     "fetchOnly": "true"
   },
   {
     "type": "Server",
     "name": "Source3",
-    "url": "https://example2.com/stream/${s.imdb_id}"
+    "url": "https://example3.com/stream/${s.imdb_id}"
   }
 ]
 ```
