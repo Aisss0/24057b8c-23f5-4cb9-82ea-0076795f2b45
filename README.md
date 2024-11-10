@@ -1,4 +1,4 @@
-# Superflix Extensions
+# Extensions
 
 A powerful and flexible media extensions management system for Superflix. This system supports multiple types of extensions that can fetch media streams and subtitles from various sources either externally or locally on device.
 
@@ -224,6 +224,10 @@ _Note: For Parameters that have included Season Number & Episode number (e.g.: s
   "url": "https://bundle.example.com/extensions/all.json"
 }
 ```
+
+
+
+***
 
 
 
