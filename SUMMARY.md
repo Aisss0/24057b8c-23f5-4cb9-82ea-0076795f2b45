@@ -1,3 +1,3 @@
 # Table of contents
 
-* [Extensions Documentation](README.md)
+* [Extensions](README.md)
