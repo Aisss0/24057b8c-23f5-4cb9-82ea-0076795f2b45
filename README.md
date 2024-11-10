@@ -1,4 +1,4 @@
-# Extensions
+# Superflix Extensions
 
 A powerful and flexible media extensions management system for Superflix. This system supports multiple types of extensions that can fetch media streams and subtitles from various sources either externally or locally on device.
 
@@ -39,7 +39,7 @@ Website extensions are used to scrape media content directly from websites. They
 }
 ```
 
-Optional parameters:
+Optional advanced parameters can be passed by adding Website extension through List extension:
 
 * `urlKeyword`: Specific keyword to match in captured URLs (defaults to .m3u8 and .mp4)
 * `dataKeyword`: Keyword to match in response body
@@ -111,8 +111,14 @@ Expected response format:
     "url": "https://example1.com/embed/${s.tmdb_id}"
   },
   {
-    "type": "Server",
+    "type": "Website",
     "name": "Source2",
+    "url": "https://example1.com/embed/${s.tmdb_id}",
+    "fetchOnly": "true"
+  },
+  {
+    "type": "Server",
+    "name": "Source3",
     "url": "https://example2.com/stream/${s.imdb_id}"
   }
 ]
