@@ -47,6 +47,7 @@ Optional parameters:
 ### Server Extensions
 
 Server extensions fetch data directly from APIs or servers that return JSON responses containing stream information.
+
 *Note: Cross-compatible with Stremio Addons. Simply use the Addon's url (e.g.: https://api.example.com/manifest.json).*
 
 ```json
