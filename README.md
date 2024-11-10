@@ -17,8 +17,8 @@ A powerful and flexible media extensions management system for Superflix. This s
 ## Features
 
 * Multiple extension types support (Website, Server, List, Code)
-* Works with torrent magnet links or infoHash
-* Able to run on device to prevent CORS or rate limit issues
+* Works with torrent magnet links or info hash
+* Able to run locally on device to prevent CORS or rate limit issues
 * Dynamic URL parameter substitution
 * Parallel processing of multiple sources
 * Automatic subtitle fetching and parsing
