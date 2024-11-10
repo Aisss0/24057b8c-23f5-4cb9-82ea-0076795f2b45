@@ -1,6 +1,6 @@
-# Extensions
+# Superflix Extensions
 
-A powerful and flexible media extensions management system for streaming applications. This system supports multiple types of extensions that can fetch media streams and subtitles from various sources either externally or locally on device.
+A powerful and flexible media extensions management system for Superflix. This system supports multiple types of extensions that can fetch media streams and subtitles from various sources either externally or locally on device.
 
 ## Table of Contents
 

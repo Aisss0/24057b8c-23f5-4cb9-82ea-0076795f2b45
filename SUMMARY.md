@@ -1,3 +1,3 @@
 # Table of contents
 
-* [Extensions](README.md)
+* [Superflix Extensions](README.md)
