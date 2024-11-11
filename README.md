@@ -1,6 +1,7 @@
 # Superflix Extensions
 
-A powerful and flexible media extensions management system for Superflix. This system supports multiple types of extensions that can fetch media streams and subtitles from various sources either externally or locally on device.
+A powerful and flexible media extensions management system for <mark style="color:purple;">**Superflix**</mark>. \
+This system supports multiple types of extensions that can fetch media streams and subtitles from various sources either externally or locally on device.
 
 ## Table of Contents
 
@@ -49,10 +50,6 @@ Optional advanced parameters can be passed by adding Website extension through L
 ### Server Extensions
 
 Server extensions fetch data directly from APIs or servers that return JSON responses containing stream information.
-
-_Note:_\
-_Cross-compatible with_ [_Stremio Addons_](https://stremio-addons.netlify.app/)_._ \
-_Simply use the Addon's url (e.g.: https://api.example.com/manifest.json)._
 
 ```json
 {
@@ -109,6 +106,10 @@ Subtitle Parametes:
 
 * `lang`: Language and/or source name
 * `url`: URL for .srt or .vtt format subtitles
+
+_Note:_\
+_Cross-compatible with_ [_Stremio Addons_](https://stremio-addons.netlify.app/)_._ \
+_Simply use the Addon's url (e.g.: https://api.example.com/manifest.json)._
 
 ### List Extensions
 
