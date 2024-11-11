@@ -175,7 +175,7 @@ ISO6391 from 'iso-639-1'
 
 ## Adding Extensions
 
-Extensions can be added to the app in three ways:
+Extensions can be added to the app in two ways:
 
 1. Through the UI:
    * Navigate to the Extensions screen
@@ -185,9 +185,6 @@ Extensions can be added to the app in three ways:
 2. Through the List extension type:
    * Add a List type extension pointing to your JSON file
    * The app will automatically import all extensions from the list
-3. Hardcoded defaults:
-   * Edit the hardcodedExtensions array in the code
-   * Extensions will be added on first launch
 
 ## URL Parameters
 
@@ -240,7 +237,7 @@ _For example, if the media type is Movie, the Season Number and Episode Number w
 
 ## Examples
 
-### Basic Website Extension
+### Website Extension
 
 ```json
 {
@@ -250,17 +247,17 @@ _For example, if the media type is Movie, the Season Number and Episode Number w
 }
 ```
 
-### Server Extension with Quality Filter
+### Server Extension
 
 ```json
 {
   "type": "Server",
   "name": "Stream Quality",
-  "url": "https://api.example.com/qualityfilter=4k|limit=5/stream/${s.type2}/${s.imdb_id_colon}"
+  "url": "https://api.example.com/stream/${s.type2}/${s.imdb_id_colon}"
 }
 ```
 
-### List Extension with Multiple Sources
+### List Extension
 
 ```json
 {
@@ -270,7 +267,15 @@ _For example, if the media type is Movie, the Season Number and Episode Number w
 }
 ```
 
+### Code Extension
 
+```json
+{
+  "type": "List",
+  "name": "StreamBundle",
+  "url": "https://api.example.com/stream/${s.type3}/${s.tmdb_id}.js"
+}
+```
 
 ***
 
