@@ -50,7 +50,9 @@ Optional advanced parameters can be passed by adding Website extension through L
 
 Server extensions fetch data directly from APIs or servers that return JSON responses containing stream information.
 
-_Note: Cross-compatible with_ [_Stremio Addons_](https://stremio-addons.netlify.app/)_. Simply use the Addon's url (e.g.: https://api.example.com/manifest.json)._
+_Note:_\
+_Cross-compatible with_ [_Stremio Addons_](https://stremio-addons.netlify.app/)_._ \
+_Simply use the Addon's url (e.g.: https://api.example.com/manifest.json)._
 
 ```json
 {
@@ -66,19 +68,24 @@ Expected response format:
 {
   "streams": [
     {
-      "name": "1080p",
-      "url": "https://example.com/stream.m3u8",
-      "description": "Movie Title"
+      "name": "HLS Auto",
+      "description": "Movie Title",
+      "url": "https://example.com/stream.m3u8"
     },
     {
       "name": "Torrent 1080p",
-      "url": "magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10",
-      "description": "Movie Title"
+      "description": "Movie Title",
+      "url": "magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10"
     },
     {
-      "name": "Torrent Auto",
-      "infoHash": "08ada5a7a6183aae1e09d831df6748d566095a10",
-      "description": "Movie Title"
+      "name": "Torrent Hash 1080p",
+      "description": "Movie Title",
+      "infoHash": "08ada5a7a6183aae1e09d831df6748d566095a10"
+    },
+    {
+      "name": "External 720p",
+      "description": "Movie Title",
+      "externalUrl": "https://example.com/12345"
     }
   ],
   "subtitles": [
@@ -89,6 +96,19 @@ Expected response format:
   ]
 }
 ```
+
+Stream Parameters:
+
+* `name`: Stream source name and/or quality
+* `description`: Media Title and/or other info
+* `url`: Direct video stream URL or torrent magnet link
+* `infoHash`: Torrent info hash
+* `externalUrl`: URL to be opened externally in default browser
+
+Subtitle Parametes:
+
+* `lang`: Language and/or source name
+* `url`: URL for .srt or .vtt format subtitles
 
 ### List Extensions
 
@@ -127,7 +147,7 @@ Expected response format:
 
 ### Code Extensions
 
-Code extensions allow for custom JavaScript code execution to fetch and process streams.
+Code extensions allow for custom JavaScript/Typescript code execution to fetch and process streams locally on device.
 
 ```json
 {
@@ -136,6 +156,21 @@ Code extensions allow for custom JavaScript code execution to fetch and process 
   "url": "https://example.com/fetcher.js"
 }
 ```
+
+The imported code is run in Typescript environment using eval(). \
+The [URL Parameters](./#url-parameters) of `${s}` can also be referenced in the code execution.
+
+Available libraries are:
+
+<pre class="language-typescript" data-full-width="false"><code class="lang-typescript"><strong>React from 'react'
+</strong>axios from 'axios';
+cheerio from 'react-native-cheerio'
+WebView from 'react-native-webview'
+Crypto from 'expo-crypto'
+decode as base64decode from 'base-64'
+semver from 'semver'
+ISO6391 from 'iso-639-1'
+</code></pre>
 
 ## Adding Extensions
 
@@ -193,12 +228,14 @@ IMDB ID Parameters:
 * `${s.imdb_id_slash}`: IMDB ID with slash format (e.g.: "tt123/1/1" for TV)
 * `${s.imdb_id_se}`: IMDB ID with s/e query (e.g.: "tt123?s=1\&e=1" for TV)
 
-Episode Information:
+Series Information:
 
 * `${s.selected_season_num}`: Selected season number
 * `${s.selected_episode_num}`: Selected episode number
 
-_Note: For Parameters that have included Season Number & Episode number (e.g.: s.tmdb\_id\_se), it will work dynamically for both Movies & Series. For example, if the media type is Movie, the Season Number and Episode Number will simply be ignored where s.tmdb\_id\_se will be the same as s.tmdb\_id._
+_Note:_ \
+_For Parameters that have included Season Number & Episode number (e.g.: s.tmdb\_id\_se), it will work dynamically for both Movies & Series._ \
+_For example, if the media type is Movie, the Season Number and Episode Number will simply be ignored where s.tmdb\_id\_se will be the same as s.tmdb\_id._
 
 ## Examples
 
@@ -238,5 +275,6 @@ _Note: For Parameters that have included Season Number & Episode number (e.g.: s
 
 
 
-_Note: Replace all example.com URLs with actual streaming sources._ \
+_Note:_ \
+_Replace all example URLs with actual streaming sources._ \
 _This README is for educational purposes only. Ensure compliance with content providers' terms of service and local regulations when implementing extensions._
