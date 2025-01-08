@@ -4,7 +4,7 @@ description: Breakdown of Superflix's robust Dynamic URLs
 
 # Extension URL Parameters
 
-### <mark style="color:purple;">Superflix</mark>'s uses <mark style="background-color:purple;">Dynamic URLs</mark> that can use a number parameters. Thus, we can fetch streams for both Movie & Series using a single URL.
+### <mark style="color:purple;">Superflix</mark> uses <mark style="background-color:purple;">Dynamic URLs</mark> that can use a number parameters. Thus, we can fetch streams for both Movie & Series using a single URL.
 
 ## Title Parameters:
 
