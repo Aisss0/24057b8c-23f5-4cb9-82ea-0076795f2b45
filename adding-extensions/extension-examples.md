@@ -35,6 +35,15 @@
 ```json
 {
   "type": "List",
+  "url": "https://bundle.example.com/extensions/all.json"
+}
+```
+
+or
+
+```json
+{
+  "type": "List",
   "url": "[
     {
       "type": "Website",
@@ -52,14 +61,5 @@
       "url": "https://api.example.com/stream2/${s.type2}/${s.imdb_id_colon}"
     },
   ]"
-}
-```
-
-or
-
-```json
-{
-  "type": "List",
-  "url": "https://bundle.example.com/extensions/all.json"
 }
 ```
