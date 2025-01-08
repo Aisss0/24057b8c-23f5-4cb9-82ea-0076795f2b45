@@ -1,6 +1,6 @@
 # Superflix Extensions
 
-## 🔍 [View Community Extensions](https://superflix.gitbook.io/community-extensions-list)&#x20;
+## 🔍 [View Community Extensions](community-extensions.md)&#x20;
 
 ## ⚡ [How to Add Extensions](./#adding-extensions)&#x20;
 
