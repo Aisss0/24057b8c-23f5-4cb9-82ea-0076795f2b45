@@ -4,8 +4,7 @@ description: Guide on how to create extensions for Superflix
 
 # Creating Extensions
 
-Anyone can create & share extensions for <mark style="color:purple;">**Superflix**</mark>
-
+Anyone can create & share extensions for <mark style="color:purple;">**Superflix**</mark>**.**\
 Our flexible extensions allow users to fetch streams either from remote sources or locally on device!
 
 ***
@@ -19,7 +18,7 @@ Website extensions are used to scrape media content directly from websites. They
 ```json
 {
   "type": "Website",
-  "name": "ExampleStream",
+  "name": "Example Stream",
   "url": "https://example.com/embed/${s.type3}/${s.tmdb_id_se}"
 }
 ```
@@ -37,7 +36,7 @@ Server extensions fetch data directly from APIs or servers that return JSON resp
 ```json
 {
   "type": "Server",
-  "name": "StreamAPI",
+  "name": "Stream API",
   "url": "https://api.example.com/stream/${s.type2}/${s.imdb_id_colon}"
 }
 ```
@@ -100,7 +99,7 @@ Code extensions allow for custom JavaScript/Typescript code execution to fetch a
 ```json
 {
   "type": "Code",
-  "name": "CustomFetcher",
+  "name": "Custom Fetcher",
   "url": "https://example.com/fetcher.js"
 }
 ```
@@ -132,7 +131,7 @@ List extensions allow importing multiple extensions from a single JSON endpoint.
 ```json
 {
   "type": "List",
-  "name": "ExtensionList",
+  "name": "Extension List",
   "url": "https://example.com/extensions.json"
 }
 ```
