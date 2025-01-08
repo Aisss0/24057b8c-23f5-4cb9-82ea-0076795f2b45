@@ -12,7 +12,9 @@
 
 
 
-A powerful and flexible media extensions management system for <mark style="color:purple;">**Superflix**</mark>. This system supports multiple types of extensions that can fetch media streams and subtitles from various sources either externally or locally on device.
+## A powerful and flexible media extensions management system for <mark style="color:purple;">**Superflix**</mark>.&#x20;
+
+This system supports multiple types of extensions that can fetch media streams and subtitles from various sources either externally or locally on device.
 
 ## Features
 
