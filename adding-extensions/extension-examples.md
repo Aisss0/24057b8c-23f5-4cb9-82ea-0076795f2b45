@@ -6,7 +6,7 @@
 {
   "type": "Website",
   "name": "StreamProvider",
-  "url": "https://stream.example.com/embed/${s.type3}/${s.tmdb_id}"
+  "url": "https://stream.example.com/embed/${s.type3}/${s.tmdb_id_slash}"
 }
 ```
 
@@ -26,7 +26,7 @@
 {
   "type": "Code",
   "name": "Stream Extractor",
-  "url": "https://api.example.com/stream/${s.type3}/${s.tmdb_id}.js"
+  "url": "https://api.example.com/stream/${s.type3}/${s.tmdb_id_colon}.js"
 }
 ```
 
@@ -39,7 +39,7 @@
     {
       "type": "Website",
       "name": "Stream Provider & Quality",
-      "url": "https://stream.example.com/embed/${s.type3}/${s.tmdb_id}"
+      "url": "https://stream.example.com/embed/${s.type3}/${s.tmdb_id_slash}"
     },
     {
       "type": "Server 1",
