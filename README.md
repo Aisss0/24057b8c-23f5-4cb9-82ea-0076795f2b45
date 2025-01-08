@@ -1,19 +1,23 @@
 # Superflix Extensions
 
-A powerful and flexible media extensions management system for <mark style="color:purple;">**Superflix**</mark>. \
+A powerful and flexible media extensions management system for **Superflix**. 
 This system supports multiple types of extensions that can fetch media streams and subtitles from various sources either externally or locally on device.
+
+[View Community Extensions](https://superflix.gitbook.io/community-extensions-list) | 
+[How to Add Extensions](#adding-extensions) | 
+[How to Create Extensions](#extension-types)
 
 ## Table of Contents
 
-* [Features](./#features)
-* [Extension Types](./#extension-types)
-  * [Website Extensions](./#website-extensions)
-  * [Server Extensions](./#server-extensions)
-  * [List Extensions](./#list-extensions)
-  * [Code Extensions](./#code-extensions)
-* [Adding Extensions](./#adding-extensions)
-* [URL Parameters](./#url-parameters)
-* [Examples](./#examples)
+* [Features](#features)
+* [Extension Types](#extension-types)
+  * [Website Extensions](#website-extensions)
+  * [Server Extensions](#server-extensions)
+  * [List Extensions](#list-extensions)
+  * [Code Extensions](#code-extensions)
+* [Adding Extensions](#adding-extensions)
+* [URL Parameters](#url-parameters)
+* [Examples](#examples)
 
 ## Features
 
@@ -75,13 +79,13 @@ Expected response format:
       "url": "magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10"
     },
     {
-      "name": "Torrent Hash 1080p",
+      "name": "Torrent Hash 1080p", 
       "description": "Movie Title",
       "infoHash": "08ada5a7a6183aae1e09d831df6748d566095a10"
     },
     {
       "name": "External 720p",
-      "description": "Movie Title",
+      "description": "Movie Title", 
       "externalUrl": "https://example.com/12345"
     }
   ],
@@ -95,20 +99,18 @@ Expected response format:
 ```
 
 Stream Parameters:
-
 * `name`: Stream source name and/or quality
-* `description`: Media Title and/or other info
+* `description`: Media Title and/or other info  
 * `url`: Direct video stream URL or torrent magnet link
 * `infoHash`: Torrent info hash
 * `externalUrl`: URL to be opened externally in default browser
 
-Subtitle Parametes:
-
+Subtitle Parameters:
 * `lang`: Language and/or source name
 * `url`: URL for .srt or .vtt format subtitles
 
-_Note:_\
-_Cross-compatible with_ [_Stremio Addons_](https://stremio-addons.netlify.app/)_._ \
+_Note:_
+_Cross-compatible with [Stremio Addons](https://stremio-addons.netlify.app/)._
 _Simply use the Addon's url (e.g.: https://api.example.com/manifest.json)._
 
 ### List Extensions
@@ -133,7 +135,7 @@ Expected response format:
     "url": "https://example1.com/embed/${s.tmdb_id}"
   },
   {
-    "type": "Website",
+    "type": "Website", 
     "name": "Source2",
     "url": "https://example2.com/embed/${s.tmdb_id}",
     "fetchOnly": "true"
@@ -158,20 +160,20 @@ Code extensions allow for custom JavaScript/Typescript code execution to fetch a
 }
 ```
 
-The imported code is run in Typescript environment using eval(). \
-The [URL Parameters](./#url-parameters) of `${s}` can also be referenced in the code execution.
+The imported code is run in Typescript environment using eval().
+The [URL Parameters](#url-parameters) of `${s}` can also be referenced in the code execution.
 
 Available libraries are:
-
-<pre class="language-typescript" data-full-width="false"><code class="lang-typescript"><strong>React from 'react'
-</strong>axios from 'axios';
+```typescript
+React from 'react'
+axios from 'axios'
 cheerio from 'react-native-cheerio'
 WebView from 'react-native-webview'
 Crypto from 'expo-crypto'
 decode as base64decode from 'base-64'
 semver from 'semver'
 ISO6391 from 'iso-639-1'
-</code></pre>
+```
 
 ## Adding Extensions
 
@@ -191,54 +193,56 @@ Extensions can be added to the app in two ways:
 The following parameters are available for dynamic URL construction for both Movies & Series:
 
 Basic Parameters:
-
-* `${s.title}`: Media title
-* `${s.name}`: Show name (for TV shows)
-* `${s.slug}`: URL-friendly version of the title
+* `${s.title}`: Media title (Example: "The Matrix")
+* `${s.name}`: Show name for TV shows (Example: "Breaking Bad")
+* `${s.slug}`: URL-friendly version of the title (Example: "the-matrix", "breaking-bad")
+* `${s.slug_se}`: Slug with season/episode for series (Example Movie: "the-matrix", Example Series: "breaking-bad/1-5")
 * `${s.backdrop_url}`: Backdrop image URL
 * `${s.poster_url}`: Poster image URL
 * `${s.logo_url}`: Primary logo URL
 * `${s.logo_url2}`: Secondary logo URL
 
 Type Parameters:
-
 * `${s.type}`: Media type ("Movies" or "Series")
 * `${s.type2}`: Media type ("movie" or "series")
 * `${s.type3}`: Media type ("movie" or "tv")
 * `${s.type4}`: Media type ("movie" or "show")
 * `${s.type5}`: Media type ("m" or "t")
-
-TMDB ID Parameters:
-
-* `${s.tmdb_id}`: Basic TMDB ID
-* `${s.tmdb_id_colon}`: TMDB ID with colon format (e.g.: "123:1:1" for TV)
-* `${s.tmdb_id_slash}`: TMDB ID with slash format (e.g.: "123/1/1" for TV)
-* `${s.tmdb_id_se}`: TMDB ID with s/e query (e.g.: "123?s=1\&e=1" for TV)
-* `${s.tmdb_id_se2}`: TMDB ID with alternate s/e format
-* `${s.tmdb_id_se3}`: TMDB ID with season/episode format
-* `${s.tmdb_id_se4}`: TMDB ID with season/episode query
-* `${s.tmdb_id_se5}`: TMDB ID with dot format (e.g.: "123.1.1" for TV)
-
-IMDB ID Parameters:
-
-* `${s.imdb_id}`: Basic IMDB ID
-* `${s.imdb_id_colon}`: IMDB ID with colon format (e.g.: "123:1:1" for TV)
-* `${s.imdb_id_slash}`: IMDB ID with slash format (e.g.: "tt123/1/1" for TV)
-* `${s.imdb_id_se}`: IMDB ID with s/e query (e.g.: "tt123?s=1\&e=1" for TV)
+* `${s.type6}`: Media type ("movie" or "episode")
+* `${s.type7}`: Media type ("movie" or "tv-show")
 
 Series Information:
+* `${s.selected_season_num}`: Selected season number (Example: "1")
+* `${s.selected_episode_num}`: Selected episode number (Example: "5")
 
-* `${s.selected_season_num}`: Selected season number
-* `${s.selected_episode_num}`: Selected episode number
+TMDB ID Parameters:
+* `${s.tmdb_id}`: Basic TMDB ID (Example: "603")
+* `${s.tmdb_id_colon}`: TMDB ID with colon format (Example Movie: "603", Example Series: "1396:1:5")
+* `${s.tmdb_id_slash}`: TMDB ID with slash format (Example Movie: "603", Example Series: "1396/1/5")
+* `${s.tmdb_id_se}`: TMDB ID with s/e query (Example Movie: "603", Example Series: "1396?s=1&e=1")
+* `${s.tmdb_id_se2}`: TMDB ID with alternative s/e format (Example Movie: "603", Example Series: "1396&s=1&e=1")
+* `${s.tmdb_id_se3}`: TMDB ID with season/episode format (Example Movie: "603", Example Series: "1396&season=1&episode=1")
+* `${s.tmdb_id_se4}`: TMDB ID with season/episode query (Example Movie: "603", Example Series: "1396?season=1&episode=1")
+* `${s.tmdb_id_se5}`: TMDB ID with dot format (Example Movie: "603", Example Series: "1396.1.1")
+* `${s.tmdb_id_se6}`: TMDB ID with reversed format (Example Movie: "603", Example Series: "1-1/1396")
 
-_Note:_ \
-_For Parameters that have included Season Number & Episode number (e.g.: s.tmdb\_id\_se), it will work dynamically for both Movies & Series._ \
-_For example, if the media type is Movie, the Season Number and Episode Number will simply be ignored where s.tmdb\_id\_se will be the same as s.tmdb\_id._
+IMDB ID Parameters:
+* `${s.imdb_id}`: Basic IMDB ID (Example: "tt0133093")
+* `${s.imdb_id_colon}`: IMDB ID with colon format (Example Movie: "tt0133093", Example Series: "tt0903747:1:5")
+* `${s.imdb_id_slash}`: IMDB ID with slash format (Example Movie: "tt0133093", Example Series: "tt0903747/1/5")
+* `${s.imdb_id_se}`: IMDB ID with s/e query (Example Movie: "tt0133093", Example Series: "tt0903747?s=1&e=5")
+
+Recently Watched Parameters:
+* `${s.watchedDuration}`: Previously watched duration in seconds
+* `${s.previous_tmdb_id_colon}`: Previously watched TMDB ID in colon format
+* `${s.previous_selected_season_num}`: Previously selected season number
+* `${s.previous_selected_episode_num}`: Previously selected episode number
+* `${s.recently_watched}`: Whether the media was recently watched (true/false)
+```
 
 ## Examples
 
 ### Website Extension
-
 ```json
 {
   "type": "Website",
@@ -248,7 +252,6 @@ _For example, if the media type is Movie, the Season Number and Episode Number w
 ```
 
 ### Server Extension
-
 ```json
 {
   "type": "Server",
@@ -258,7 +261,6 @@ _For example, if the media type is Movie, the Season Number and Episode Number w
 ```
 
 ### List Extension
-
 ```json
 {
   "type": "List",
@@ -268,7 +270,6 @@ _For example, if the media type is Movie, the Season Number and Episode Number w
 ```
 
 ### Code Extension
-
 ```json
 {
   "type": "List",
@@ -277,10 +278,8 @@ _For example, if the media type is Movie, the Season Number and Episode Number w
 }
 ```
 
-***
+---
 
-
-
-_Note:_ \
-_Replace all example URLs with actual streaming sources._ \
+_Note:_
+_Replace all example URLs with actual streaming sources._
 _This README is for educational purposes only. Ensure compliance with content providers' terms of service and local regulations when implementing extensions._
