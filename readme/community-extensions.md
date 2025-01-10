@@ -1,8 +1,8 @@
 # Community Extensions
 
 {% hint style="info" %}
-You can add the entire list as a List extension.\
-Simply copy & paste directly in the app.
+_You can add the either entire list or selected extensions._\
+_Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
 {% endhint %}
 
 ```json

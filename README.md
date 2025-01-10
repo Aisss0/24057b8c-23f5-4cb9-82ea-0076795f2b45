@@ -37,5 +37,5 @@ This system supports multiple types of extensions that can fetch media streams a
 
 
 {% hint style="info" %}
-_Replace all example URLs with actual streaming sources._ _This README is for educational purposes only. Ensure compliance with content providers' terms of service and local regulations when implementing extensions._
+_Disclaimer: This documentation is for educational purposes only. Ensure compliance with content providers' terms of service and local regulations when implementing extensions._
 {% endhint %}
