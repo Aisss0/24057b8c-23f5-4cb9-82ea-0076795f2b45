@@ -1,10 +1,10 @@
 # Superflix Extensions
 
-## 🔍 [View Community Extensions](community-extensions.md)&#x20;
+## 🔍 [View Community Extensions](readme/community-extensions.md)&#x20;
 
-## ⚡ [How to Add Extensions](adding-extensions/)&#x20;
+## ⚡ [How to Add Extensions](readme/adding-extensions/)&#x20;
 
-## 🪄 [How to Create Extensions](creating-extensions.md)
+## 🪄 [How to Create Extensions](readme/creating-extensions.md)
 
 
 
