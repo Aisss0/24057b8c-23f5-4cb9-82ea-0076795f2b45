@@ -11,7 +11,7 @@ Our flexible extensions allow users to fetch streams either from remote sources 
 
 {% hint style="info" %}
 _<mark style="background-color:purple;">**Dynamic URLs**</mark> are used in all extensions to fetch streams for both Movies & Series from a single URL._\
-_You can read the full URL Parameters_ [_here_](adding-extensions/extension-url-parameters.md)_._
+_You can refer the full URL Parameters_ [_here_](adding-extensions/extension-url-parameters.md)_._
 {% endhint %}
 
 ## Extension Types
