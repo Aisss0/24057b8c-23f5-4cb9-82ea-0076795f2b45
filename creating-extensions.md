@@ -9,6 +9,11 @@ Our flexible extensions allow users to fetch streams either from remote sources 
 
 ***
 
+{% hint style="info" %}
+_<mark style="background-color:purple;">**Dynamic URLs**</mark> are used in all extensions to fetch streams for both Movies & Series from a single URL._\
+_You can read the full URL Parameters_ [_here_](adding-extensions/extension-url-parameters.md)_._
+{% endhint %}
+
 ## Extension Types
 
 ### Website Extensions
@@ -89,8 +94,10 @@ Subtitle Parameters:
 * `lang`: Language and/or source name
 * `url`: URL for .srt or .vtt format subtitles
 
-_Note:_ _Cross-compatible with_ [_Stremio Addons_](https://stremio-addons.com/)_._ \
+{% hint style="info" %}
+_Cross-compatible with_ [_Stremio Addons_](https://stremio-addons.com/)_._ \
 &#xNAN;_&#x53;imply use the Addon's url (e.g.: https://api.example.com/manifest.json)._
+{% endhint %}
 
 ### Code Extensions
 

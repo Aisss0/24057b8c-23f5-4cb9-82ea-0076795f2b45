@@ -2,9 +2,11 @@
 
 ## 🔍 [View Community Extensions](community-extensions.md)&#x20;
 
-## ⚡ [How to Add Extensions](./#adding-extensions)&#x20;
+## ⚡ [How to Add Extensions](adding-extensions/)&#x20;
 
-## 🪄 [How to Create Extensions](./#extension-types)
+## 🪄 [How to Create Extensions](creating-extensions.md)
+
+
 
 
 
@@ -28,6 +30,12 @@ This system supports multiple types of extensions that can fetch media streams a
 * Quality-based sorting of sources
 * Deduplication of streams and subtitles
 
+
+
 ***
 
-_Note:_ _Replace all example URLs with actual streaming sources._ _This README is for educational purposes only. Ensure compliance with content providers' terms of service and local regulations when implementing extensions._
+
+
+{% hint style="info" %}
+_Replace all example URLs with actual streaming sources._ _This README is for educational purposes only. Ensure compliance with content providers' terms of service and local regulations when implementing extensions._
+{% endhint %}

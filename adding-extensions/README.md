@@ -13,20 +13,26 @@ description: Guide on how to add extensions to Superflix
 
 ## Extensions can be added to in 2 ways:
 
-1. Adding a single extension:
+1. **Adding a single extension:**
    * Navigate to the Extensions screen
    * Select the extension type of either "Website", "Server" or "Code"
    * Enter the extension name and URL
    * Click "Add"
-2. Adding multiple extensions:
+2. **Adding multiple extensions:**
    * Add a List type extension pointing to your JSON file
    * Navigate to the Extensions screen
    * Select the extension type of "List"
-   * Enter the extension name
    * Enter the URL pointing to JSON or directly paste the JSON list of the extensions
    * Click "Add"
 
+{% hint style="info" %}
+_Cross-compatible with_ [_Stremio Addons_](https://stremio-addons.com/)_._ \
+&#xNAN;_&#x41;dd the Addon's url (e.g.: https://api.example.com/manifest.json) as a Server extension._
+{% endhint %}
 
+***
 
-## Read the next pages for Parameters & Examples on adding extensions..
+{% hint style="info" %}
+Read the next pages for Parameters & Examples on adding extensions
+{% endhint %}
 
