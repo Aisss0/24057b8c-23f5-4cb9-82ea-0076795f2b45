@@ -16,7 +16,7 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
   {
     type: 'Server',
     name: 'Torrentio',
-    url: 'https://torrentio.strem.fun/limit=10/stream/${s.type2}/${s.imdb_id_colon}.json',
+    url: 'https://torrentio.strem.fun/stream/${s.type2}/${s.imdb_id_colon}.json',
     description: 'Fetches torrents for media'
   },
   {
