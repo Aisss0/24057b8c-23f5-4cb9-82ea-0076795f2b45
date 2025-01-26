@@ -26,6 +26,10 @@ description: Breakdown of Superflix's robust Dynamic URLs
 
 * `${s.selected_season_num}`: Selected season number (Example: "1")
 * `${s.selected_episode_num}`: Selected episode number (Example: "5")
+* `${s.se}`: s/e format\
+  (Example Movie: "", Example Series: "s=1\&e=1")
+* `${s.se2}`: s/e format\
+  (Example Movie: "", Example Series: "season=1\&e=1")
 
 ## TMDB ID Parameters:
 

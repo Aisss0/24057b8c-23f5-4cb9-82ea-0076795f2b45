@@ -21,8 +21,21 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
    },
    {
       "type":"Website",
-      "name":"VidsrcDev",
-      "url":"https://vidsrc.dev/embed/${s.type3}/${s.tmdb_id_slash}",
+      "name":"PopcornMovies",
+      "url":"https://popcornmovies.to/${s.type7}/${s.slug_se}",
+      "description":"Checks website for video stream",
+      "shouldOpenExternally":true
+   },
+   {
+      "type":"Website",
+      "name":"Streamflix",
+      "url":"https://watch.streamflix.one/${s.type3}/${s.tmdb_id}/watch?server=1&${s.se2}",
+      "description":"Checks website for video stream"
+   },
+   {
+      "type":"Website",
+      "name":"xPrime",
+      "url":"https://xprime.tv/watch/${s.tmdb_id_slash}",
       "description":"Checks website for video stream",
       "urlKeyword":"==.m3u8"
    },
@@ -34,29 +47,28 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
       "urlKeyword":"==.m3u8"
    },
    {
-      "type":"Website",
-      "name":"sf",
-      "url":"https://watch.streamflix.one/movie/939243/watch?server=1",
-      "description":"Checks website for video stream"
-   },
-   {
-      "type":"Server",
-      "name":"Stremify | Elfhosted",
-      "url":"https://stremify.hayd.uk/YnVpbHQtaW4sZHJhbWFjb29sLGRyYW1hY29vbF9jYXRhbG9nLGdvZ29hbmltZSxnb2dvYW5pbWVfY2F0YWxvZw==/stream/${s.type2}/${s.imdb_id_colon}.json",
-      "description":"Checks server for stream url"
-   },
-   {
-      "type":"Website",
-      "name":"PopcornMovies",
-      "url":"https://popcornmovies.to/${s.type7}/${s.slug_se}",
-      "description":"Checks website for video stream",
-      "shouldOpenExternally":true
+      "type":"Embed Link",
+      "name":"EmbedSu",
+      "url":"https://embed.su/embed/${s.type3}/${s.tmdb_id_slash}",
+      "description":"Links to Embed externally"
    },
    {
       "type":"Embed Link",
-      "name":"Google",
-      "url":"https://vidlink.pro/${s.type3}/${s.tmdb_id_slash}",
-      "description":"Checks website for video stream"
+      "name":"111Movies",
+      "url":"https://111movies.com/${s.type3}/${s.tmdb_id_slash}",
+      "description":"Links to Embed externally"
+   },
+   {
+      "type":"Embed Link",
+      "name":"SmashyStream",
+      "url":"https://player.smashy.stream/${s.type3}/${s.tmdb_id_se}",
+      "description":"Links to Embed externally"
+   },
+   {
+      "type":"Embed Link",
+      "name":"MovieClub",
+      "url":"https://moviesapi.club/${s.type3}/${s.tmdb_id_dash}",
+      "description":"Links to Embed externally"
    }
 ]
 ```
