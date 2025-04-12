@@ -67,7 +67,7 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
    {
       "type":"Server",
       "name":"MediaFusion | Elfhosted",
-      "url":"https://mediafusion.elfhosted.com/eJwBgAB__5repNJ3wgotw9v6KFw7ZDoLUUfQX-H-qY9_QvYmWjYokXt7XaTaeB0A3tzOMqcELPd2iN2zreylchUZBjNCh6xBAVWml5eeHpc1srfaBgVaNKriJBFA5QaO4dcy2EizSi-iuxVgM7z0z-lpGjQzr9sm9WnL-yyET6Y33l-fKVrmsEo-Ng==/manifest.json",
+      "url":"https://mediafusion.elfhosted.com/D-O7UtAOauPlvjL2n7HQfwWnz6Nr48lPk2ZnTCCYoVvD0/manifest.json",
       "description":"Fetches torrents for media"
    }
 ]
