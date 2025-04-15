@@ -1,6 +1,11 @@
 # Community Extensions
 
 {% hint style="info" %}
+_Cross-compatible with_ [_Stremio Addons_](https://stremio-addons.com/)_._ \
+&#xNAN;_&#x41;dd the Addon's url (e.g.: https://api.example.com/manifest.json) as a Server extension._
+{% endhint %}
+
+{% hint style="info" %}
 _You can add the by copying the entire list below or selected extensions._\
 _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
 {% endhint %}
@@ -48,7 +53,14 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "name": "VidJoy",
     "url": "https://vidjoy.pro/embed/${s.type3}/${s.tmdb_id_slash}",
     "description": "Checks website for video stream",
-    "urlKeyword": "Expires="
+    "replaceUrlKeywords": [
+      {
+        "/embed/api/routes/watch2gather?url=": ""
+      }
+    ],
+    "decodeUrl": true,
+    "matchNum": 2,
+    "quality": "480p"
   },
   {
     "type": "Website",
