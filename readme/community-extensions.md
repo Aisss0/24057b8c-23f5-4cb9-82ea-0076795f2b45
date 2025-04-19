@@ -58,7 +58,8 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "url": "https://vidjoy.pro/embed/${s.type3}/${s.tmdb_id_slash}",
     "details": "Checks website for video stream",
     "replaceReqUrlKeywords": {
-      "/embed/api/routes/watch2gather?url=": ""
+      "/embed/api/routes/watch2gather?url=": "",
+      "https://vidjoy.pro": ""
     },
     "decodeReqUrl": true,
     "matchNum": 2,
