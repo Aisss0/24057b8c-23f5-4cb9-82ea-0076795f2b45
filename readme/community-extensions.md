@@ -50,29 +50,7 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "url": "https://vidlink.pro/${s.type3}/${s.tmdb_id_slash}",
     "details": "Checks website for video stream",
     "resBodyKeywords": [".m3u8",".mp4"],
-    "customCodeString": "return (function(streamData) {
-  try {
-    const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData;
-    const convertedData = { streams: [], subtitles: [] };
-
-    if (data && data.stream) {
-      convertedData.streams.push({
-        url: data.stream.playlist,
-      });
-      if (data.stream.captions && Array.isArray(data.stream.captions)) {
-        convertedData.subtitles = data.stream.captions.map(caption => ({
-          lang: caption.language,
-          url: caption.url,
-        }));
-      }
-    }
-
-    return convertedData;
-  } catch (e) {
-    console.error('Error in conversion:', e);
-    return { error: e.message, streams: [], subtitles: [] };
-  }
-})(streamData);"
+    "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.stream) { convertedData.streams.push({ url: data.stream.playlist }); if (data.stream.captions && Array.isArray(data.stream.captions)) { convertedData.subtitles = data.stream.captions.map(caption => ({ lang: caption.language, url: caption.url })); } } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
   },
   {
     "type": "Website",
