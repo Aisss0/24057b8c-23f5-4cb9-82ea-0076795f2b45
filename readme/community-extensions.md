@@ -57,12 +57,9 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "name": "VidJoy",
     "url": "https://vidjoy.pro/embed/${s.type3}/${s.tmdb_id_slash}",
     "details": "Checks website for video stream",
-    "replaceReqUrlKeywords": [
-      {
-        "/embed/api/routes/watch2gather?url=": "",
-        "https://vidjoy.pro": ""
-      }
-    ],
+    "replaceReqUrlKeywords": {
+      "/embed/api/routes/watch2gather?url=": ""
+    },
     "decodeReqUrl": true,
     "matchNum": 2,
     "quality": "480p"
