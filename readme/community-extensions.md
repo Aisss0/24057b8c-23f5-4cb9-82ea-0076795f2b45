@@ -36,15 +36,6 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "url": "https://embed.su/embed/${s.type3}/${s.tmdb_id_slash}",
     "details": "Links to Embed externally"
   },
-  
-  {
-    "type": "Website",
-    "name": "VidlinkPro",
-    "url": "https://vidlink.pro/${s.type3}/${s.tmdb_id_slash}",
-    "details": "Checks website for subtitles",
-    "resBodyKeywords": [".m3u8",".mp4"],
-    "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.stream && data.stream.captions && Array.isArray(data.stream.captions)) { convertedData.subtitles = data.stream.captions.map(caption => ({ lang: caption.language, url: caption.url })); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
-  },
   {
     "type": "Website",
     "name": "xPrime",
@@ -70,13 +61,16 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "type": "Website",
     "name": "Streamflix",
     "url": "https://watch.streamflix.one/${s.type3}/${s.tmdb_id}/watch?server=4&${s.se2}",
-    "details": "Checks website for video stream"
+    "details": "Checks website for video stream",
+    "quality": "1080p"
   },
   {
     "type": "Website",
-    "name": "PopcornMovies",
-    "url": "https://popcornmovies.to/${s.type7}/${s.slug_se}",
-    "details": "Checks website for video stream"
+    "name": "VidlinkPro",
+    "url": "https://vidlink.pro/${s.type3}/${s.tmdb_id_slash}",
+    "details": "Checks website for subtitles",
+    "resBodyKeywords": [".m3u8",".mp4"],
+    "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.stream && data.stream.captions && Array.isArray(data.stream.captions)) { convertedData.subtitles = data.stream.captions.map(caption => ({ lang: caption.language, url: caption.url })); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
   },
   {
     "type": "Server",
