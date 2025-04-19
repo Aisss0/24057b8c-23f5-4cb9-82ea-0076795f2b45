@@ -49,8 +49,7 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "name": "VidlinkPro",
     "url": "https://vidlink.pro/${s.type3}/${s.tmdb_id_slash}",
     "details": "Checks website for video stream",
-    "resBodyKeywords": [".m3u8",".mp4"],
-
+    "resBodyKeywords": [".m3u8",".mp4"]
   },
   {
     "type": "Website",
