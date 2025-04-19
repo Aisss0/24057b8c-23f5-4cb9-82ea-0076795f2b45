@@ -16,31 +16,31 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "type": "Embed Link",
     "name": "MovieClub",
     "url": "https://moviesapi.club/${s.type3}/${s.tmdb_id_dash}",
-    "description": "Links to Embed externally"
+    "details": "Links to Embed externally"
   },
   {
     "type": "Embed Link",
     "name": "SmashyStream",
     "url": "https://player.smashy.stream/${s.type3}/${s.tmdb_id_se}",
-    "description": "Links to Embed externally"
+    "details": "Links to Embed externally"
   },
   {
     "type": "Embed Link",
     "name": "111Movies",
     "url": "https://111movies.com/${s.type3}/${s.tmdb_id_slash}",
-    "description": "Links to Embed externally"
+    "details": "Links to Embed externally"
   },
   {
     "type": "Embed Link",
     "name": "EmbedSu",
     "url": "https://embed.su/embed/${s.type3}/${s.tmdb_id_slash}",
-    "description": "Links to Embed externally"
+    "details": "Links to Embed externally"
   },
   {
     "type": "Website",
     "name": "xPrime",
     "url": "https://xprime.tv/watch/${s.tmdb_id_slash}",
-    "description": "Checks website for video stream",
+    "details": "Checks website for video stream",
     "resBodyKeywords": [".m3u8",".mp4"],
     "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.streams) { for (const quality in data.streams) { convertedData.streams.push({ url: data.streams[quality], quality: quality }); } } if (data && data.subtitles && Array.isArray(data.subtitles)) { convertedData.subtitles = data.subtitles.map(subtitle => { return { lang: subtitle.label, url: subtitle.file }; }); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);",
   },
@@ -48,39 +48,15 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "type": "Website",
     "name": "VidlinkPro",
     "url": "https://vidlink.pro/${s.type3}/${s.tmdb_id_slash}",
-    "description": "Checks website for video stream"
+    "details": "Checks website for video stream"
     "resBodyKeywords": [".m3u8",".mp4"],
-    "customCodeString": "
-return (function(streamData) {
-  try {
-    const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData;
-    const convertedData = { streams: [], subtitles: [] };
-
-    if (data && data.stream) {
-      convertedData.streams.push({
-        url: data.stream.playlist,
-      });
-      if (data.stream.captions && Array.isArray(data.stream.captions)) {
-        convertedData.subtitles = data.stream.captions.map(caption => ({
-          lang: caption.language,
-          url: caption.url,
-        }));
-      }
-    }
-
-    return convertedData;
-  } catch (e) {
-    console.error('Error in conversion:', e);
-    return { error: e.message, streams: [], subtitles: [] };
-  }
-})(streamData);
-"
+    "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.stream) { convertedData.streams.push({ url: data.stream.playlist }); if (data.stream.captions && Array.isArray(data.stream.captions)) { convertedData.subtitles = data.stream.captions.map(caption => ({ lang: caption.language, url: caption.url })); } } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
   },
   {
     "type": "Website",
     "name": "VidJoy",
     "url": "https://vidjoy.pro/embed/${s.type3}/${s.tmdb_id_slash}",
-    "description": "Checks website for video stream",
+    "details": "Checks website for video stream",
     "replaceReqUrlKeywords": [
       {
         "/embed/api/routes/watch2gather?url=": "",
@@ -95,25 +71,25 @@ return (function(streamData) {
     "type": "Website",
     "name": "Streamflix",
     "url": "https://watch.streamflix.one/${s.type3}/${s.tmdb_id}/watch?server=4&${s.se2}",
-    "description": "Checks website for video stream"
+    "details": "Checks website for video stream"
   },
   {
     "type": "Website",
     "name": "PopcornMovies",
     "url": "https://popcornmovies.to/${s.type7}/${s.slug_se}",
-    "description": "Checks website for video stream"
+    "details": "Checks website for video stream"
   },
   {
     "type": "Server",
     "name": "Torrentio",
     "url": "https://torrentio.strem.fun/stream/${s.type2}/${s.imdb_id_colon}.json",
-    "description": "Fetches torrents for media"
+    "details": "Fetches torrents for media"
   },
   {
     "type": "Server",
     "name": "MediaFusion | Elfhosted",
     "url": "https://mediafusion.elfhosted.com/D-O7UtAOauPlvjL2n7HQfwWnz6Nr48lPk2ZnTCCYoVvD0/manifest.json",
-    "description": "Fetches torrents for media"
+    "details": "Fetches torrents for media"
   }
 ]
 ```
