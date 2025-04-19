@@ -50,7 +50,7 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "url": "https://vidlink.pro/${s.type3}/${s.tmdb_id_slash}",
     "description": "Checks website for video stream"
     "resBodyKeywords": [".m3u8",".mp4"],
-    "customCodeString": `
+    "customCodeString": "
 return (function(streamData) {
   try {
     const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData;
@@ -74,7 +74,7 @@ return (function(streamData) {
     return { error: e.message, streams: [], subtitles: [] };
   }
 })(streamData);
-`
+"
   },
   {
     "type": "Website",
