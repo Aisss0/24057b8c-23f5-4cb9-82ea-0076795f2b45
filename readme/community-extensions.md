@@ -41,7 +41,7 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "name": "xPrime",
     "url": "https://xprime.tv/watch/${s.tmdb_id_slash}",
     "description": "Checks website for video stream",
-    "resBodyKeywords": ['.m3u8','.mp4'],
+    "resBodyKeywords": [".m3u8",".mp4"],
     "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.streams) { for (const quality in data.streams) { convertedData.streams.push({ url: data.streams[quality], quality: quality }); } } if (data && data.subtitles && Array.isArray(data.subtitles)) { convertedData.subtitles = data.subtitles.map(subtitle => { return { lang: subtitle.label, url: subtitle.file }; }); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);",
   },
   {
