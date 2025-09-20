@@ -41,14 +41,14 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "name": "Netplay",
     "url": "https://netplayz.live/watch?type=${s.type3}&id=${s.tmdb_id_se2}&play=true",
     "details": "Checks website for video stream",
-    "resBodyKeywords": [".m3u8",".mp4"],
+    "resBodyKeywords": [".m3u8",".mp4"]
   },
   {
     "type": "Website",
     "name": "xPrime2",
     "url": "https://xprime.today/watch/${s.tmdb_id_slash}",
     "details": "Checks website for video stream",
-    "resBodyKeywords": [".m3u8",".mp4"],
+    "resBodyKeywords": [".m3u8",".mp4"]
   },
   {
     "type": "Website",
