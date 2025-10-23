@@ -91,7 +91,7 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "name": "Aether",
     "url": "https://aether.mom/media/tmdb-tv-153312-tulsa-king/446906/6432117",
     "details": "Checks website for streams",
-    "resBodyKeywords": ["m3u8",".m3u8",".mp4"]
+    "resBodyKeywords": ["m3u8-proxy",".m3u8",".mp4"]
   },
   {
     "type": "Server",
