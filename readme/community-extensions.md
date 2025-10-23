@@ -89,7 +89,7 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
   {
     "type": "Website",
     "name": "Aether",
-    "url": "https://aether.mom/media/tmdb-${s.type3}-${s.tmdb_id_colon2}",
+    "url": "https://aether.mom/media/tmdb-${s.type3}-${s.tmdb_id_slash2}",
     "details": "Checks website for streams",
     "reqUrlKeywords": ["m3u8-proxy",".m3u8",".mp4"]
   },
