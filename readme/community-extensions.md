@@ -87,6 +87,14 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.stream && data.stream.captions && Array.isArray(data.stream.captions)) { convertedData.subtitles = data.stream.captions.map(caption => ({ lang: caption.language, url: caption.url })); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
   },
   {
+    "type": "Website",
+    "name": "Aether",
+    "url": "https://aether.mom/media/tmdb-tv-153312-tulsa-king/446906/6432117",
+    "details": "Checks website for subtitles",
+    "resBodyKeywords": ["m3u8",".m3u8",".mp4"],
+    "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.stream && data.stream.captions && Array.isArray(data.stream.captions)) { convertedData.subtitles = data.stream.captions.map(caption => ({ lang: caption.language, url: caption.url })); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
+  },
+  {
     "type": "Server",
     "name": "Torrentio",
     "url": "https://torrentio.strem.fun/stream/${s.type2}/${s.imdb_id_colon}.json",
