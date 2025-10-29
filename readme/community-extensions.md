@@ -14,115 +14,138 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
 [
   "type": "catalog",
   "name": "Avengers Collections",
-  "poster_orientation": "portrait", 
-  "catalogs": 
-    [{
+  "poster_orientation": "portrait",
+  "catalogs": [
+    {
       "name": "Avengers Collection",
-      "tmdb_ids": [24428, 99861, 299536, 299534]
-    }]
-  },
-  {
+      "tmdb_ids": [
+        24428,
+        99861,
+        299536,
+        299534
+      ]
+    }
+  ]
+},
+{
   "type": "catalog",
   "name": "MCU Collections",
   "poster_orientation": "landscape",
-  "items": 
-    [{
+  "items": [
+    {
       "name": "Marvel Cinematic Universe",
       "url": "https://api.themoviedb.org/3/collection/86311?api_key=${s.api_key}&language=en-US"
-    }]
+    }
+  ]
+},
+{
+  "type": "Embed Link",
+  "name": "MovieClub",
+  "url": "https://moviesapi.club/${s.type3}/${s.tmdb_id_dash}",
+  "details": "Links to Embed externally"
+},
+{
+  "type": "Embed Link",
+  "name": "SmashyStream",
+  "url": "https://player.smashy.stream/${s.type3}/${s.tmdb_id_se}",
+  "details": "Links to Embed externally"
+},
+{
+  "type": "Embed Link",
+  "name": "111Movies",
+  "url": "https://111movies.com/${s.type3}/${s.tmdb_id_slash}",
+  "details": "Links to Embed externally"
+},
+{
+  "type": "Website",
+  "name": "Netplay",
+  "url": "https://netplayz.live/watch?type=${s.type3}&id=${s.tmdb_id_se2}&play=true",
+  "details": "Checks website for video stream",
+  "resBodyKeywords": [
+    ".m3u8",
+    ".mp4"
+  ]
+},
+{
+  "type": "Website",
+  "name": "xPrime2",
+  "url": "https://xprime.today/watch/${s.tmdb_id_slash}",
+  "details": "Checks website for video stream",
+  "resBodyKeywords": [
+    ".m3u8",
+    ".mp4"
+  ]
+},
+{
+  "type": "Website",
+  "name": "xPrime",
+  "url": "https://xprime.today/watch/${s.tmdb_id_slash}",
+  "details": "Checks website for video stream",
+  "resBodyKeywords": [
+    ".m3u8",
+    ".mp4"
+  ],
+  "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.streams) { for (const quality in data.streams) { convertedData.streams.push({ url: data.streams[quality], quality: quality }); } } if (data && data.subtitles && Array.isArray(data.subtitles)) { convertedData.subtitles = data.subtitles.map(subtitle => { return { lang: subtitle.label, url: subtitle.file }; }); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
+},
+{
+  "type": "Website",
+  "name": "VidJoy",
+  "url": "https://vidjoy.pro/embed/${s.type3}/${s.tmdb_id_slash}",
+  "details": "Checks website for video stream",
+  "replaceReqUrlKeywords": {
+    "/embed/api/routes/watch2gather?url=": "",
+    "https://vidjoy.pro": ""
   },
-  {
-    "type": "Embed Link",
-    "name": "MovieClub",
-    "url": "https://moviesapi.club/${s.type3}/${s.tmdb_id_dash}",
-    "details": "Links to Embed externally"
-  },
-  {
-    "type": "Embed Link",
-    "name": "SmashyStream",
-    "url": "https://player.smashy.stream/${s.type3}/${s.tmdb_id_se}",
-    "details": "Links to Embed externally"
-  },
-  {
-    "type": "Embed Link",
-    "name": "111Movies",
-    "url": "https://111movies.com/${s.type3}/${s.tmdb_id_slash}",
-    "details": "Links to Embed externally"
-  },
-  {
-    "type": "Website",
-    "name": "Netplay",
-    "url": "https://netplayz.live/watch?type=${s.type3}&id=${s.tmdb_id_se2}&play=true",
-    "details": "Checks website for video stream",
-    "resBodyKeywords": [".m3u8",".mp4"]
-  },
-  {
-    "type": "Website",
-    "name": "xPrime2",
-    "url": "https://xprime.today/watch/${s.tmdb_id_slash}",
-    "details": "Checks website for video stream",
-    "resBodyKeywords": [".m3u8",".mp4"]
-  },
-  {
-    "type": "Website",
-    "name": "xPrime",
-    "url": "https://xprime.today/watch/${s.tmdb_id_slash}",
-    "details": "Checks website for video stream",
-    "resBodyKeywords": [".m3u8",".mp4"],
-    "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.streams) { for (const quality in data.streams) { convertedData.streams.push({ url: data.streams[quality], quality: quality }); } } if (data && data.subtitles && Array.isArray(data.subtitles)) { convertedData.subtitles = data.subtitles.map(subtitle => { return { lang: subtitle.label, url: subtitle.file }; }); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
-  },
-  {
-    "type": "Website",
-    "name": "VidJoy",
-    "url": "https://vidjoy.pro/embed/${s.type3}/${s.tmdb_id_slash}",
-    "details": "Checks website for video stream",
-    "replaceReqUrlKeywords": {
-      "/embed/api/routes/watch2gather?url=": "",
-      "https://vidjoy.pro": ""
-    },
-    "decodeReqUrl": true,
-    "matchNum": 2,
-    "quality": "480p"
-  },
-  {
-    "type": "Website",
-    "name": "Streamflix",
-    "url": "https://watch.streamflix.one/${s.type3}/${s.tmdb_id}/watch?server=4&${s.se2}",
-    "details": "Checks website for video streams",
-    "quality": "1080p"
-  },
-  {
-    "type": "Website",
-    "name": "VidlinkPro",
-    "url": "https://vidlink.pro/${s.type3}/${s.tmdb_id_slash}",
-    "details": "Checks website for subtitles",
-    "resBodyKeywords": [".m3u8",".mp4"],
-    "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.stream && data.stream.captions && Array.isArray(data.stream.captions)) { convertedData.subtitles = data.stream.captions.map(caption => ({ lang: caption.language, url: caption.url })); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
-  },
-  {
-    "type": "Website",
-    "name": "Aether",
-    "url": "https://aether.mom/media/tmdb-${s.type3}-${s.tmdb_id_slash2}",
-    "details": "Checks website for streams",
-    "reqUrlKeywords": ["m3u8-proxy",".m3u8",".mp4"]
-  },
-  {
-    "type": "Server",
-    "name": "Nuvia",
-    "url": "https://nuviostreams.hayd.uk/manifest.json",
-    "details": "Fetches streams"
-  },
-  {
-    "type": "Server",
-    "name": "Torrentio",
-    "url": "https://torrentio.strem.fun/stream/${s.type2}/${s.imdb_id_colon}.json",
-    "details": "Fetches torrents"
-  },
-  {
-    "type": "Server",
-    "name": "MediaFusion | Elfhosted",
-    "url": "https://mediafusion.elfhosted.com/D-O7UtAOauPlvjL2n7HQfwWnz6Nr48lPk2ZnTCCYoVvD0/manifest.json",
-    "details": "Fetches torrents"
-  }
+  "decodeReqUrl": true,
+  "matchNum": 2,
+  "quality": "480p"
+},
+{
+  "type": "Website",
+  "name": "Streamflix",
+  "url": "https://watch.streamflix.one/${s.type3}/${s.tmdb_id}/watch?server=4&${s.se2}",
+  "details": "Checks website for video streams",
+  "quality": "1080p"
+},
+{
+  "type": "Website",
+  "name": "VidlinkPro",
+  "url": "https://vidlink.pro/${s.type3}/${s.tmdb_id_slash}",
+  "details": "Checks website for subtitles",
+  "resBodyKeywords": [
+    ".m3u8",
+    ".mp4"
+  ],
+  "customCodeString": "return (function(streamData) { try { const data = typeof streamData === 'string' ? JSON.parse(streamData) : streamData; const convertedData = { streams: [], subtitles: [] }; if (data && data.stream && data.stream.captions && Array.isArray(data.stream.captions)) { convertedData.subtitles = data.stream.captions.map(caption => ({ lang: caption.language, url: caption.url })); } return convertedData; } catch (e) { console.error('Error in conversion:', e); return { error: e.message, streams: [], subtitles: [] }; } })(streamData);"
+},
+{
+  "type": "Website",
+  "name": "Aether",
+  "url": "https://aether.mom/media/tmdb-${s.type3}-${s.tmdb_id_slash2}",
+  "details": "Checks website for streams",
+  "reqUrlKeywords": [
+    "m3u8-proxy",
+    ".m3u8",
+    ".mp4"
+  ]
+},
+{
+  "type": "Server",
+  "name": "Nuvia",
+  "url": "https://nuviostreams.hayd.uk/manifest.json",
+  "details": "Fetches streams"
+},
+{
+  "type": "Server",
+  "name": "Torrentio",
+  "url": "https://torrentio.strem.fun/stream/${s.type2}/${s.imdb_id_colon}.json",
+  "details": "Fetches torrents"
+},
+{
+  "type": "Server",
+  "name": "MediaFusion | Elfhosted",
+  "url": "https://mediafusion.elfhosted.com/D-O7UtAOauPlvjL2n7HQfwWnz6Nr48lPk2ZnTCCYoVvD0/manifest.json",
+  "details": "Fetches torrents"
+}
 ]
 ```
