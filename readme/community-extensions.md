@@ -31,12 +31,6 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
     "details": "Links to Embed externally"
   },
   {
-    "type": "Embed Link",
-    "name": "EmbedSu",
-    "url": "https://embed.su/embed/${s.type3}/${s.tmdb_id_slash}",
-    "details": "Links to Embed externally"
-  },
-  {
     "type": "Website",
     "name": "Netplay",
     "url": "https://netplayz.live/watch?type=${s.type3}&id=${s.tmdb_id_se2}&play=true",
@@ -95,15 +89,21 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
   },
   {
     "type": "Server",
+    "name": "Nuvia",
+    "url": "https://nuviostreams.hayd.uk/manifest.json",
+    "details": "Fetches streams"
+  },
+  {
+    "type": "Server",
     "name": "Torrentio",
     "url": "https://torrentio.strem.fun/stream/${s.type2}/${s.imdb_id_colon}.json",
-    "details": "Fetches torrents for media"
+    "details": "Fetches torrents"
   },
   {
     "type": "Server",
     "name": "MediaFusion | Elfhosted",
     "url": "https://mediafusion.elfhosted.com/D-O7UtAOauPlvjL2n7HQfwWnz6Nr48lPk2ZnTCCYoVvD0/manifest.json",
-    "details": "Fetches torrents for media"
+    "details": "Fetches torrents"
   }
 ]
 ```
