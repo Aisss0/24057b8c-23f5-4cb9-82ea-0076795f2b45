@@ -12,6 +12,25 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
 
 ```json
 [
+  "type": "catalog",
+  "name": "Avengers Collections",
+  "poster_orientation": "portrait", 
+  "catalogs": 
+    [{
+      "name": "Avengers Collection",
+      "tmdb_ids": [24428, 99861, 299536, 299534]
+    }]
+  },
+  {
+  "type": "catalog",
+  "name": "MCU Collections",
+  "poster_orientation": "landscape",
+  "items": 
+    [{
+      "name": "Marvel Cinematic Universe",
+      "url": "https://api.themoviedb.org/3/collection/86311?api_key=${s.api_key}&language=en-US"
+    }]
+  },
   {
     "type": "Embed Link",
     "name": "MovieClub",
