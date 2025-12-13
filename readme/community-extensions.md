@@ -133,6 +133,12 @@ _Guide on Adding Extensions can be referred_ [_here_](adding-extensions/)_._
   },
   {
     "type": "Server",
+    "name": "Webstreamr",
+    "url": "https://webstreamr.hayd.uk/%7B%22multi%22%3A%22on%22%2C%22mediaFlowProxyUrl%22%3A%22%22%2C%22mediaFlowProxyPassword%22%3A%22%22%7D/manifest.json",
+    "details": "Fetches streams"
+  },
+  {
+    "type": "Server",
     "name": "Torrentio",
     "url": "https://torrentio.strem.fun/stream/${s.type2}/${s.imdb_id_colon}.json",
     "details": "Fetches torrents"
